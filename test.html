@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+</head>
+<body ng-app="ionicApp">
+<ion-tabs class="tabs-positive tabs-icon-only">
+
+    <ion-tab title="首页" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+        <ion-view>
+            首页内容
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="关于" icon-on="ion-ios7-clock" icon-off="ion-ios7-clock-outline">
+        <ion-view>
+            关于内容
+        </ion-view>
+    </ion-tab>
+
+    <ion-tab title="设置" icon-on="ion-ios7-gear" icon-off="ion-ios7-gear-outline">
+        <ion-view>
+            设置内容
+        </ion-view>
+    </ion-tab>
+
+</ion-tabs>
+
+<script src="lib/ionic/js/ionic.bundle.min.js"></script>
+<script>
+    var app = angular.module("ionicApp",["ionic"]);
+</script>
+</body>
+</html>

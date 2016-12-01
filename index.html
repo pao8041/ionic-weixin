@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信UI</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="lib/ionic/css/ionic.css" type="text/css" rel="stylesheet">
+    <link href="assets/stylesheets/wechat.css" type="text/css" rel="stylesheet">
+</head>
+<body ng-app="wechat">
+<ion-nav-view></ion-nav-view>
+<script type="text/ng-template" id="tabs.html">
+        <ion-tabs class="tabs-icon-top tabs-color-active-balanced">
+            <ion-tab title="微信" icon-on="ion-ios-chatbubble" icon-off="ion-ios-chatbubble-outline" ui-sref="tab.message">
+                <ion-nav-view animation="slide-left-right" name="tab-message"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="通讯录" icon-on="ion-ios-people" icon-off="ion-ios-people-outline" ui-sref="tab.contacts">
+                <ion-nav-view animation="slide-left-right" name="tab-contacts"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="发现" icon-on="ion-ios-paperplane" icon-off="ion-ios-paperplane-outline" ui-sref="tab.discover">
+                <ion-nav-view animation="slide-left-right" name="tab-discover"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="我" icon-off="ion-ios-person-outline" icon-on="ion-ios-person" ui-sref="tab.setting">
+                <ion-nav-view animation="slide-left-right" name="tab-setting"></ion-nav-view>
+            </ion-tab>
+        </ion-tabs>
+</script>
+<script type="text/ng-template" id="tab-message.html">
+    <ion-header-bar align-title="left" class="bar bar-dark">
+        <h1 class="title">微信(16)</h1>
+        <div class="buttons">
+            <button class="button button-icon icon ion-android-search"></button>
+            <button class="button button-icon icon ion-plus"></button>
+        </div>
+    </ion-header-bar>
+    <ion-view>
+        <ion-content on-swipe-left="swipeLeft()">
+            <ion-list>
+                <ion-item class="item-avatar-left" ng-repeat="msg in messages" ng-click="showMsgDetail(msg.id)">
+                    <img ng-src="{{msg.pic}}">
+                    <span class="item-avatar-badge" ng-bind="msg.noReadMessages"></span>
+                    <h2 ng-bind="msg.name"></h2>
+                    <p ng-bind="msg.lastMessage.content"></p>
+                    <span class="wc-push-right" ng-bind="msg.lastMessage.originalTime">21:00</span>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-view>
+</script>
+<script type="text/ng-template" id="tab-contacts">
+    <ion-header-bar align-title="left" class="bar-dark">
+        <div class="h1 title">微信(16)</div>
+        <div class="buttons">
+            <button class="button no-animation button-icon icon ion-android-search">
+            </button>
+            <button class="button no-animation button-icon icon ion-android-add">
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-contact">
+                <div class="contact-pic bgc-orange">
+                    <i class="ion-person-add"></i>
+                </div>
+                <h2>新的朋友</h2>
+            </ion-item>
+            <ion-item class="item-contact">
+                <div class="contact-pic rj-orange-bgc">
+                    <i class="ion-person-add"></i>
+                </div>
+                <h2>新的朋友</h2>
+            </ion-item>
+            <ion-item class="item-contact">
+                <div class="contact-pic rj-orange-bgc">
+                    <i class="ion-person-add"></i>
+                </div>
+                <h2>新的朋友</h2>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</script>
+<script type="text/ng-template" id="tab-discover">
+    discover
+</script>
+<script type="text/ng-template" id="tab-setting">
+    setting
+</script>
+<script type="text/ng-template" id="msg-detail">
+    <ion-header-bar align-title="left" class="bar-dark">
+        <div class="buttons">
+            <button class="button button-icon icon ion-arrow-left-c" ui-sref="tab.message"></button>
+        </div>
+        <h1 class="title">{{msg.name}}</h1>
+        <div class="buttons">
+            <button class="button button-icon icon ion-person"></button>
+        </div>
+    </ion-header-bar>
+    <ion-view>
+        <ion-content>
+                <div ng-repeat="item in msg.message" class="item-text-wrap">
+                    <p class="rj-message-time" ng-bind="item.time" ng-if="false"></p>
+                    <div class="rj-message-wrap" ng-if="!item.isFromeMe">
+                        <img ng-src="{{msg.pic}}" class="rj-head-pic">
+                        <span class="rj-triangle-left"></span>
+                        <p class="rj-message" ng-bind="item.content"></p>
+                    </div>
+                    <div class="rj-message-wrap" ng-if="item.isFromeMe">
+                        <img src="img/me.png" class="rj-head-pic-right">
+                        <span class="rj-triangle-right"></span>
+                        <p class="rj-message-right" ng-bind="item.content"></p>
+                    </div>
+                </div>
+        </ion-content>
+    </ion-view>
+    <ion-footer-bar align-title="left">
+        <div class="buttons">
+            <button class="button button-icon icon ion-person"></button>
+        </div>
+        <div class="title">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div class="buttons">
+            <button class="button button-icon icon ion-ios-plus-outline"></button>
+        </div>
+    </ion-footer-bar>
+</script>
+
+<script src="lib/ionic/js/ionic.bundle.min.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/routers.js"></script>
+<script src="js/services.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

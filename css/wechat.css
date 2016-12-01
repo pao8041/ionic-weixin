@@ -1,0 +1,91 @@
+/* line 1, ../assets/sass/wechat.scss */
+.wc-push-right {
+  position: absolute;
+  right: 10px;
+  top: 28px;
+  color: #8c8c8c;
+  font-size: 13px;
+}
+
+/* line 8, ../assets/sass/wechat.scss */
+.rj-message-wrap {
+  padding: 7px;
+  overflow: auto;
+  position: relative;
+}
+
+/* line 13, ../assets/sass/wechat.scss */
+.rj-message-wrap .rj-head-pic,
+.rj-message-wrap .rj-head-pic-right {
+  max-height: 40px;
+  max-width: 40px;
+}
+
+/* line 18, ../assets/sass/wechat.scss */
+.rj-message-wrap .rj-head-pic {
+  float: left;
+}
+
+/* line 21, ../assets/sass/wechat.scss */
+.rj-message-wrap .rj-head-pic-right {
+  float: right;
+}
+
+/* line 24, ../assets/sass/wechat.scss */
+.rj-message-wrap .rj-message,
+.rj-message-wrap .rj-message-right {
+  padding: 6px 8px;
+  line-height: 26px;
+  max-width: 190px;
+  border-radius: 5px;
+}
+
+/* line 31, ../assets/sass/wechat.scss */
+.rj-message-wrap .rj-message {
+  float: left;
+  margin-left: 16px;
+  background-color: #fff;
+}
+
+/* line 36, ../assets/sass/wechat.scss */
+.rj-message-wrap .rj-message-right {
+  float: right;
+  margin-right: 16px;
+  background-color: #6BE00B;
+}
+
+/* line 41, ../assets/sass/wechat.scss */
+.rj-message-wrap .rj-triangle-left,
+.rj-message-wrap .rj-triangle-right {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-width: 8px 10px;
+  border-style: solid;
+  top: 17px;
+}
+
+/* line 51, ../assets/sass/wechat.scss */
+.rj-message-wrap .rj-triangle-left {
+  left: 47px;
+  border-color: transparent #FFF transparent transparent;
+}
+
+/* line 55, ../assets/sass/wechat.scss */
+.rj-message-wrap .rj-triangle-right {
+  right: 47px;
+  border-color: transparent transparent transparent #6BE00B;
+}
+
+/* line 59, ../assets/sass/wechat.scss */
+.rj-message-time {
+  width: 42px;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
